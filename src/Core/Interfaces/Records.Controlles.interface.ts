@@ -5,7 +5,7 @@
  */
 
 
- export interface RecordsControllerInterface {
+ export interface IRecordsController {
     getRecordsByRecordType() : any
 
     getRecordsWithAllType() : any

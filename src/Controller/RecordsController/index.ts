@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { RecordsModule } from "../../Modules/records.Model";
-import { RecordsControllerInterface } from "../../Core/Interfaces/Records.Controlles.interface";
+import { IRecordsController } from "../../Core/Interfaces/Records.Controlles.interface";
 
 let expectedRecordes : string[] = [
   'deposit_records' ,
@@ -10,7 +10,7 @@ let expectedRecordes : string[] = [
   'all'
 ];
 
-export class RecordsController implements RecordsControllerInterface {
+export class RecordsController implements IRecordsController  {
 
   recordsMd : RecordsModule = new RecordsModule();
 

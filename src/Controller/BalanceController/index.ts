@@ -1,6 +1,6 @@
-import { BalanceControllerIntefrace } from "../../Core/Interfaces/Balance.Controller.interface";
+import { IBalanceController } from "../../Core/Interfaces/Balance.Controller.interface";
 
-export class BalanceController implements BalanceControllerIntefrace {
+export class BalanceController implements IBalanceController {
 
     sendBalance() {
         throw new Error("Method not implemented.");

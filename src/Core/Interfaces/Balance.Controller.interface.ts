@@ -1,4 +1,4 @@
-export interface BalanceControllerIntefrace {
+export interface IBalanceController {
     sendBalance() : any;
     
     pullBalance() : any;
