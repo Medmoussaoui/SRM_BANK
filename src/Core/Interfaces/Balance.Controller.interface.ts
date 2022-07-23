@@ -20,6 +20,6 @@ export interface IBalanceController {
      * @param badget
      * @param clientId
      */
-    
+       
     getBalanceInfo() : any;
 }
