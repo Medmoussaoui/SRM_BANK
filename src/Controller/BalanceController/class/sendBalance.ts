@@ -1,4 +1,5 @@
 import { EndPoint } from "../../../Core/Helper/endpoint";
+import { BalanceModule } from "../../../Modules/BalanceModule/BalanceModule";
 import { SendBalanceModule } from "../../../Modules/BalanceModule/SendBalanceModule"
 import { SendBalanceErrors } from "./sendBalanceErrors";
 
