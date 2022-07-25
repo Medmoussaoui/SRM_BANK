@@ -9,8 +9,8 @@ import { BalanceModule } from "../Modules/BalanceModule/BalanceModule";
  * - ds545q4dq5s45d4s
  */
 
-export function testGetBalance(clientId: string) {
+export async function testGetBalance(clientId: string) : Promise<any> {
     const module = new BalanceModule();
-    module.getBalance();
-
+    const balance = await module.getBalance();
+    return balance;
 }
