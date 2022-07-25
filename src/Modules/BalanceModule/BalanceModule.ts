@@ -1,4 +1,4 @@
-class BalanceModule {
+export class BalanceModule {
     async getBalance(): Promise<number> {
         // ...
         return 10;
