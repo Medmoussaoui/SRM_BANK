@@ -1,4 +1,4 @@
-import { EndPoint } from "../../../Core/shared/endpoint";
+import { EndPoint } from "../../../Core/Helper/endpoint";
 import { SendBalanceModule } from "../../../Modules/BalanceModule/SendBalanceModule"
 import { SendBalanceErrors } from "./sendBalanceErrors";
 
@@ -56,12 +56,11 @@ export class SendBalance extends BalanceModule {
         }
 
         const transfer = await this.transferBalance();
-        if (transfer.success == false) {
-            return transfer;
+        if (transfer.success) {
+            return await this.setRecordTransfer();
         }
-
-        const setRecords = await this.setRecordTransfer();
-        return setRecords;
+        
+        return transfer;
     }
 
 

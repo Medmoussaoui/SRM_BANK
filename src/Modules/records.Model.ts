@@ -1,5 +1,5 @@
 import { RecordsModuleInterface, RecordsOptions } from "../Core/Interfaces/Records.Module.Interface";
-import * as connection from '../Core/functions/MySQL_Functions';
+import * as connection from '../Core/Helper/MySQL_Functions';
 
 
 export class RecordsModule implements RecordsModuleInterface {

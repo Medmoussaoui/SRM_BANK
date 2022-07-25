@@ -1,4 +1,4 @@
-import { EndPoint } from "../../../Core/shared/endpoint";
+import { EndPoint } from "../../../Core/Helper/endpoint";
 
 export class SendBalanceErrors {
 

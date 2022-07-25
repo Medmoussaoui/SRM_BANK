@@ -1,7 +1,7 @@
 import { IBalanceController } from "../../Core/Interfaces/Balance.Controller.interface";
 import { FormSheama } from "../../Core/class/Validation";
 import { SendBalance } from "./class/sendBalance";
-import * as connecion from '../../Core/functions/MySQL_Functions';
+import * as connecion from '../../Core/Helper/MySQL_Functions';
 
 const sendBalanceSheama: FormSheama = new FormSheama(
     [
