@@ -1,4 +1,4 @@
-import * as connection from '../Core/functions/MySQL_Functions';
+import * as connection from '../Core/Helper/MySQL_Functions';
 
 export interface ClientCredentials {
   email:    string,

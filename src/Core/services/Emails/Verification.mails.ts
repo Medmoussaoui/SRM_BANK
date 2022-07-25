@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import { mailerServiceURL } from ".";
-import { postMethode } from "../../functions/Post_Methode";
+import { postMethode } from "../../Helper/Post_Methode";
 
 export async function sendCodeVerifyLogin(data:{}) : Promise<any> { 
   const options = postMethode(data);

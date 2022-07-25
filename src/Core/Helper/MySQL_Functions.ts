@@ -38,25 +38,10 @@ function query(query: string) : Promise<any> {
   });
 }
 
-//  Async Sql Process Function 
-async function sqlProcess( callback: () => Promise<any> ){
-  return new Promise( async (resolve, reject) => {
-    try {
-      await connect();
-      callback().then((result) => resolve(result)).catch((err) => reject(err));
-    } catch(err) {
-        reject(err);
-    } finally {
-      await endConnect();
-    }
-  });
-} 
-
 // Export the Connection Instance
 export {
   query,
   endConnect,
   connect,
-  sql,
-  sqlProcess
+  sql
 };
