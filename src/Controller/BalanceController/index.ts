@@ -31,7 +31,7 @@ export class BalanceController implements IBalanceController {
             if (isValid == false) {
                 return res.status(400).send('Bad Request');
             }
-
+            
             const sendBalance = new SendBalance(req.body);
             await connecion.connect();
 
