@@ -1,6 +1,6 @@
 export interface IBalanceController {
 
-    sendBalance() : any;
+    transferBalance(req,res): any;
     /**
      * this methode we gona use it to send badget of money from this 
      * client account by senderId to other person by publicClientId
@@ -8,8 +8,8 @@ export interface IBalanceController {
      * @param senderId
      * @param publicClientId
      */
-    
-    pullBalance() : any;
+
+    pullBalance(req,res): any;
     /**
      * this methode we gona use it to regester any action of pull balance
      * from ATM of bank region the information we gona register is 
@@ -20,6 +20,10 @@ export interface IBalanceController {
      * @param badget
      * @param clientId
      */
-       
-    getBalanceInfo() : any;
+
+    putBalance(): any;
+
+    getBalanceInfo(): any;
+
+
 }

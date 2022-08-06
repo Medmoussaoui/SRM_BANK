@@ -1,7 +1,6 @@
 import { IBalanceController } from "../../Core/Interfaces/Balance.Controller.interface";
 import { FormSheama } from "../../Core/class/Validation";
-import { SendBalance } from "./class/sendBalance";
-import * as connecion from '../../Core/Helper/MySQL_Functions';
+import { TransferBalanceController } from "./class/TransferBalance/TransferBalanceController";
 
 const sendBalanceSheama: FormSheama = new FormSheama(
     [
@@ -24,28 +23,28 @@ const sendBalanceSheama: FormSheama = new FormSheama(
 
 export class BalanceController implements IBalanceController {
 
-    sendBalance() {
-        return async (req, res) => {
+    async transferBalance(req, res) {
 
-            const isValid = sendBalanceSheama.validate(req.body);
-            if (isValid == false) {
-                return res.status(400).send('Bad Request');
-            }
-            
-            const sendBalance = new SendBalance(req.body);
-            await connecion.connect();
-
-            const success = await sendBalance.send();
-            await connecion.endConnect();
-
-            if (success.success) {
-                return res.status(200).send(success.data);
-            }
-            res.status(success.success).send(success.error);
+        const isValid = sendBalanceSheama.validate(req.body);
+        if (isValid == false) {
+            return res.status(400).send('Bad Request');
         }
+
+        const sendBalance = new TransferBalanceController(req.body);
+        const success = await sendBalance.send();
+
+        if (success.success) {
+            return res.status(200).send(success.data);
+        }
+        res.status(success.success).send(success.error);
+
     }
 
-    pullBalance() {
+    pullBalance(req,res) {
+        throw new Error("Method not implemented.");
+    }
+
+    putBalance() {
         throw new Error("Method not implemented.");
     }
 

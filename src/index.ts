@@ -1,22 +1,27 @@
 import express from 'express';
 import { administration } from './Routers/administration';
-import { records } from './Routers/Records';
 import session from 'express-session';
 import { sessionOptions } from './Core/Config/session.config';
 import { auth } from './Routers/auth';
 import { sendCodeVerifyLogin } from './Core/services/Emails/Verification.mails';
+import helmet from 'helmet';
+import { balanceRouter } from './Routers/balance';
 
 
 const app = express();
 
 
-// Set Express-Session Middleware
+// Middlewares //
 app.use(session(sessionOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(helmet());
 
-// Set Some Security Middlewares
-//app.use(helmet());
+// Routes //
+app.use('/auth', auth);
+app.use('/balance', balanceRouter);
+
+
 
 app.get('/sendMail', async (req, res) => {
   try {
@@ -37,9 +42,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/auth', auth);
-app.use('/administration', administration);
-app.use('/records', records);
+
 
 
 

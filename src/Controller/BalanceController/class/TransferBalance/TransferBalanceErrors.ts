@@ -1,6 +1,6 @@
-import { EndPoint } from "../../../Core/Helper/endpoint";
+import { EndPoint } from "../../../../Core/Helper/endpoint";
 
-export class SendBalanceErrors {
+export class TransferBalanceErrors {
 
     balanceNotEnough(): EndPoint {
         return {
