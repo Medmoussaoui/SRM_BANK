@@ -22,6 +22,9 @@ app.use('/auth', auth);
 app.use('/balance', balanceRouter);
 
 
+app.get('/welcome',(req,res) => {
+  return res.send("Welcome into out server Node Js");
+});
 
 app.get('/sendMail', async (req, res) => {
   try {
