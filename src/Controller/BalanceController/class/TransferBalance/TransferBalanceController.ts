@@ -59,7 +59,8 @@ export class TransferBalanceController {
         const balanceAccount = await this.balanceModule.getBalance();
 
         if (balanceAccount < this.options.badget) {
-            return this.errors.balanceNotEnough();
+            const error = this.errors.balanceNotEnough();
+            return error;
         }
         const setRecords = await this.setTransferRecords();
 
